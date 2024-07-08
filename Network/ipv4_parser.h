@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdint.h>
 
 #define FRAME_SIZE 14
 #define IPV4_PARSER_IP_ADDR_SIZE
@@ -18,12 +19,12 @@
 struct ipv4_packet {
     unsigned char version:4, header_len:4; /**< Version and header length */
     unsigned char type_of_service;          /**< Type of service */
-    int16_t total_length;            /**< Total length */
-    int16_t identification;          /**< Identification */
-    int16_t flags_and_fragment_offset; /**< Flags and fragment offset */
+    uint16_t total_length;            /**< Total length */
+    uint16_t identification;          /**< Identification */
+    uint16_t flags_and_fragment_offset; /**< Flags and fragment offset */
     unsigned char time_to_live;             /**< Time to live */
     unsigned char protocol;                 /**< Protocol */
-    int16_t header_checksum;         /**< Header checksum */
+    uint16_t header_checksum;         /**< Header checksum */
     unsigned char source_ip_address[IPV4_PARSER_IP_ADDR_SIZE];     /**< Source IP address */
     unsigned char dest_ip_address[IPV4_PARSER_IP_ADDR_SIZE];       /**< Destination IP address */
 }typedef ipv4_packet_t;
