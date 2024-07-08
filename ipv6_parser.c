@@ -9,8 +9,8 @@
  * @param ipv6_packet Pointer to the ipv6_packet structure to be filled.
  * @param buffer Buffer containing the frame data.
  */
-void parse_ipv6(struct ipv6_packet *ipv6_packet, unsigned char *buffer) {
-    if (ipv6_packet) {
+void parse_ipv6(ipv6_packet_t *ipv6_packet, unsigned char *buffer) {
+    if (ipv6_packet == NULL) {
         return;
     }
 
@@ -25,7 +25,7 @@ void parse_ipv6(struct ipv6_packet *ipv6_packet, unsigned char *buffer) {
  *
  * @param ipv6_packet Pointer to the ipv6_packet structure containing the IPv6 packet details.
  */
-void print_ipv6(struct ipv6_packet *ipv6_packet) {
+void print_ipv6(ipv6_packet_t *ipv6_packet) {
     printf("----------IPV6----------\n");
     printf("artts: %02x%02x%02x%02x\n",
                         ipv6_packet->artt[0], ipv6_packet->artt[1],

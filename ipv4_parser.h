@@ -17,15 +17,15 @@
 struct ipv4_packet {
     unsigned char version:4, header_len:4; /**< Version and header length */
     unsigned char type_of_service;          /**< Type of service */
-    unsigned short total_length;            /**< Total length */
-    unsigned short identification;          /**< Identification */
-    unsigned short flags_and_fragment_offset; /**< Flags and fragment offset */
+    int16_t total_length;            /**< Total length */
+    int16_t identification;          /**< Identification */
+    int16_t flags_and_fragment_offset; /**< Flags and fragment offset */
     unsigned char time_to_live;             /**< Time to live */
     unsigned char protocol;                 /**< Protocol */
-    unsigned short header_checksum;         /**< Header checksum */
+    int16_t header_checksum;         /**< Header checksum */
     unsigned char source_ip_address[4];     /**< Source IP address */
     unsigned char dest_ip_address[4];       /**< Destination IP address */
-};
+}typedef ipv4_packet_t;
 
 /**
  * @brief Parses an IPv4 packet from the given buffer.

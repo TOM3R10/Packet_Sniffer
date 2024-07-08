@@ -10,8 +10,8 @@
  * @param ipv4 Pointer to the ipv4_packet structure to be filled.
  * @param buffer Buffer containing the frame data.
  */
-void parse_ipv4(struct ipv4_packet *ipv4, unsigned char* buffer) {
-    if (ipv4) {
+void parse_ipv4(ipv4_packet_t *ipv4, unsigned char* buffer) {
+    if (ipv4 == NULL) {
         return;
     }
 
@@ -27,7 +27,7 @@ void parse_ipv4(struct ipv4_packet *ipv4, unsigned char* buffer) {
  *
  * @param ipv4_packet Pointer to the ipv4_packet structure containing the IPv4 packet details.
  */
-void print_ipv4(struct ipv4_packet *ipv4_packet) {
+void print_ipv4(ipv4_packet_t *ipv4_packet) {
     printf("----------IPV4----------\n");
     printf("Version: %d\n", ipv4_packet->version);
     printf("Header Length: %d\n", ipv4_packet->header_len);

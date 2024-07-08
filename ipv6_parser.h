@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdint.h>
 
 #define FRAME_SIZE 14
 
@@ -14,12 +15,12 @@
  */
 struct ipv6_packet {
     unsigned char artt[4];       /**< Arbitrary four bytes */
-    unsigned short payload_len;  /**< Payload length */
+    uint16_t payload_len;  /**< Payload length */
     unsigned char next_hdr;      /**< Next header */
     unsigned char hop_limit;     /**< Hop limit */
     unsigned char src_addr[16];  /**< Source address */
     unsigned char dest_addr[16]; /**< Destination address */
-};
+}typedef ipv6_packet_t;
 
 /**
  * @brief Parses an IPv6 packet from the given buffer.
@@ -30,7 +31,7 @@ struct ipv6_packet {
  * @param ipv6_packet Pointer to the ipv6_packet structure to be filled.
  * @param buffer Buffer containing the frame data.
  */
-void parse_ipv6(struct ipv6_packet *ipv6_header, unsigned char *buffer);
+void parse_ipv6(ipv6_packet_t *ipv6_header, unsigned char *buffer);
 
 /**
  * @brief Prints the details of the IPv6 packet.
@@ -40,6 +41,6 @@ void parse_ipv6(struct ipv6_packet *ipv6_header, unsigned char *buffer);
  *
  * @param ipv6_packet Pointer to the ipv6_packet structure containing the IPv6 packet details.
  */
-void print_ipv6(struct ipv6_packet *ipv6_header);
+void print_ipv6(ipv6_packet_t *ipv6_header);
 
 #endif // IPV6_PARSER_H
