@@ -3,6 +3,7 @@
 
 #include <string.h>
 #define UDP_PARSER_PROTOCOL_UDP_NUM 17
+#include <stdint.h>
 
 /**
  * @brief Structure representing a UDP header.

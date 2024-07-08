@@ -6,8 +6,8 @@
 #include <stdint.h>
 
 #define FRAME_SIZE 14
-#define IPV6_PARSER_IP_ADDR_SIZE
-#define IPV6_PARSER_ARRT_SIZE
+#define IPV6_PARSER_IP_ADDR_SIZE 16
+#define IPV6_PARSER_ARRT_SIZE 4
 /**
  * @brief Structure representing an IPv6 packet.
  *

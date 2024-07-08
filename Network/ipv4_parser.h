@@ -6,7 +6,7 @@
 #include <stdint.h>
 
 #define FRAME_SIZE 14
-#define IPV4_PARSER_IP_ADDR_SIZE
+#define IPV4_PARSER_IP_ADDR_SIZE 4
 
 /**
  * @brief Structure representing an IPv4 packet.
