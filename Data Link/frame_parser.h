@@ -3,6 +3,7 @@
 
 #include <string.h>
 #include <stdio.h>
+#include <stdint.h>
 
 #define FRAME_PARSER_MAX_FRAME_SIZE 1518
 #define FRAME_PARSER_MAC_ADDRESS_LENGTH 6
@@ -17,7 +18,7 @@
 struct frame_header {
     unsigned char dest_mac[FRAME_PARSER_MAC_ADDRESS_LENGTH];   /**< Destination MAC address */
     unsigned char src_mac[FRAME_PARSER_MAC_ADDRESS_LENGTH];    /**< Source MAC address */
-    unit_16_t ether_type;   /**< Ether type field */
+    uint16_t ether_type;   /**< Ether type field */
 }typedef frame_header_t;
 
 /**
